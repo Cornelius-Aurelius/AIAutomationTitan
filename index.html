@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Titan AI Automation — Enterprise-Grade Automation Agency</title>
+<meta name="description" content="Titan AI Automation delivers elite, enterprise-level automation deployments for businesses requiring transformative efficiency, intelligent workflows, and fully autonomous operations.">
+<meta name="keywords" content="AI automation, business automation, enterprise AI, workflow automation, RPA, intelligent systems">
+
+<!-- OpenGraph -->
+<meta property="og:title" content="Titan AI Automation">
+<meta property="og:description" content="Enterprise-grade AI automation solutions delivered through a fully integrated, intelligent platform.">
+<meta property="og:type" content="website">
+
+<!-- Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Titan AI Automation",
+  "url": "https://example.com",
+  "description": "Enterprise-level AI automation agency delivering workflow intelligence, process automation, predictive analytics, and next-generation operational systems.",
+  "logo": "",
+  "contactPoint": [{
+    "@type": "ContactPoint",
+    "contactType": "sales",
+    "email": "contact@example.com"
+  }]
+}
+</script>
+
+<style>
+:root {
+  --bg: #0b0f17;
+  --fg: #e8ecf7;
+  --accent: #60aaff;
+  --glass: rgba(255,255,255,0.08);
+  --radius: 18px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Inter, system-ui, sans-serif;
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  overflow-x: hidden;
+  font-size: clamp(14px, 1.4vw, 18px);
+}
+
+/* Hero */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 6vw 5vw;
+  position: relative;
+}
+
+.hero h1 {
+  font-size: clamp(2.6rem, 6vw, 6rem);
+  font-weight: 800;
+  line-height: 1.1;
+  background: linear-gradient(90deg, #ffffff, #8dc6ff);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.hero p {
+  max-width: 700px;
+  margin-top: 2rem;
+  opacity: 0.9;
+  font-size: clamp(1rem, 1.7vw, 1.4rem);
+}
+
+.btn {
+  margin-top: 2.5rem;
+  padding: 1rem 2rem;
+  border-radius: var(--radius);
+  background: linear-gradient(135deg, #2a81ff, #6acbff);
+  color: #fff;
+  font-size: 1.1rem;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+  min-height: 44px;
+}
+
+.btn:hover {
+  opacity: 0.85;
+}
+
+/* Background Orb */
+.orb {
+  position: absolute;
+  top: -20%;
+  right: -15%;
+  width: 60vw;
+  height: 60vw;
+  background: radial-gradient(circle, rgba(60,140,255,0.25), transparent 70%);
+  filter: blur(60px);
+  animation: float 10s infinite ease-in-out alternate;
+}
+
+@keyframes float {
+  from { transform: translateY(-20px); }
+  to   { transform: translateY(20px); }
+}
+
+/* Sections */
+.section {
+  padding: 8vw 5vw;
+}
+
+.section h2 {
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  margin-bottom: 2rem;
+}
+
+.grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+}
+
+.card {
+  background: var(--glass);
+  border: 1px solid rgba(255,255,255,0.05);
+  padding: 2rem;
+  border-radius: var(--radius);
+  backdrop-filter: blur(12px);
+  transition: 0.3s;
+}
+
+.card:hover {
+  border-color: rgba(255,255,255,0.12);
+  transform: translateY(-4px);
+}
+
+/* Icon SVG */
+.icon {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 1rem;
+}
+
+/* Pricing */
+.pricing {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
+}
+
+.price-box {
+  background: var(--glass);
+  padding: 3rem 2rem;
+  border-radius: var(--radius);
+  border: 1px solid rgba(255,255,255,0.07);
+  backdrop-filter: blur(14px);
+  text-align: center;
+}
+
+.price-box h3 {
+  font-size: 1.8rem;
+}
+
+.price {
+  font-size: 2.6rem;
+  font-weight: bold;
+  margin: 1rem 0;
+}
+
+footer {
+  padding: 5vw;
+  text-align: center;
+  opacity: 0.6;
+  font-size: 0.9rem;
+}
+</style>
+</head>
+
+<body>
+
+<section class="hero">
+  <div class="orb"></div>
+
+  <div>
+    <h1>Automation That Transforms Enterprises</h1>
+    <p>We design and deploy advanced AI automation systems that eliminate manual work, optimize operations, and deliver compound efficiency gains across every department of your business.</p>
+    <button class="btn" onclick="scrollToSection('services')">Explore Services</button>
+  </div>
+</section>
+
+<section id="services" class="section">
+  <h2>Automation Capabilities</h2>
+  <div class="grid">
+
+    <div class="card">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#60aaff" stroke-width="2">
+        <circle cx="12" cy="12" r="9"/>
+        <path d="M12 7v5l3 2"/>
+      </svg>
+      <h3>Workflow Intelligence</h3>
+      <p>End-to-end workflow automation, orchestrating tasks, approvals, and decision-making with precision and speed.</p>
+    </div>
+
+    <div class="card">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#60aaff" stroke-width="2">
+        <path d="M3 3h18v12H3z"/>
+        <path d="M8 21h8"/>
+        <path d="M12 15v6"/>
+      </svg>
+      <h3>Autonomous Operations</h3>
+      <p>Systems capable of monitoring, analyzing, and acting without human intervention—safe, reliable, and scalable.</p>
+    </div>
+
+    <div class="card">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#60aaff" stroke-width="2">
+        <path d="M4 4h16v4H4z"/>
+        <path d="M4 12h16v8H4z"/>
+      </svg>
+      <h3>Document Automation</h3>
+      <p>Contract processing, invoice extraction, compliance workflows, and structured data pipelines handled in milliseconds.</p>
+    </div>
+
+    <div class="card">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#60aaff" stroke-width="2">
+        <circle cx="12" cy="12" r="10"/>
+        <path d="M12 12l4-4M12 12l-4-4M12 12l4 4M12 12l-4 4"/>
+      </svg>
+      <h3>Predictive Analytics</h3>
+      <p>Real-time forecasting and risk scoring for operations, finance, supply chain, customer support, and HR.</p>
+    </div>
+
+  </div>
+</section>
+
+<section class="section">
+  <h2>Pricing Framework</h2>
+  <div class="pricing">
+
+    <div class="price-box">
+      <h3>Foundation</h3>
+      <div class="price">£12,500</div>
+      <p>Entry-level automations, diagnostic audit, and workflow mapping.</p>
+    </div>
+
+    <div class="price-box">
+      <h3>Enterprise</h3>
+      <div class="price">£48,000</div>
+      <p>Department-wide automation deployment with custom integrations.</p>
+    </div>
+
+    <div class="price-box">
+      <h3>Titan Suite</h3>
+      <div class="price">£185,000+</div>
+      <p>Full-company automation transformation including predictive systems, monitoring, and executive dashboards.</p>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  © Titan AI Automation — All rights reserved.
+</footer>
+
+<script>
+function scrollToSection(id) {
+  document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+}
+</script>
+
+</body>
+</html>
