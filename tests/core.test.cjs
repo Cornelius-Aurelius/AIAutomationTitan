@@ -1,0 +1,15 @@
+const test=require('node:test');const assert=require('node:assert/strict');const Core=require('../core.js');
+const example={workflowName:'Invoice approvals',department:'Finance',hours:20,hourly:25,reduction:30,sensitivity:'moderate',actionType:'update',bottleneck:'Slow approvals'};
+test('precise illustrative calculation',()=>{const a=Core.assess(example);assert.equal(a.annualHours,1040);assert.equal(a.scenarioHours,312);assert.equal(a.scenarioValue,7800);});
+test('zero hourly rate is allowed',()=>{assert.equal(Core.assess({...example,hourly:0}).scenarioValue,0)});
+test('invalid workflow name',()=>assert.throws(()=>Core.assess({...example,workflowName:' '}),/workflow name/));
+test('non-numeric hours rejected',()=>assert.throws(()=>Core.assess({...example,hours:'dog'}),/hours/));
+test('no negative hours',()=>assert.throws(()=>Core.assess({...example,hours:-1}),/hours/));
+test('no unrealistic reductions',()=>assert.throws(()=>Core.assess({...example,reduction:100}),/assumption/));
+test('no unsafe or implausible hourly rates',()=>assert.throws(()=>Core.assess({...example,hourly:1001}),/cost/));
+test('high sensitivity gets privacy review',()=>assert.match(Core.assess({...example,sensitivity:'high'}).checks.join(' '),/privacy\/security review/));
+test('external changes require human approval',()=>assert.match(Core.assess({...example,actionType:'external'}).checks.join(' '),/human approval/));
+test('draft-only workflow uses read-only pathway',()=>assert.match(Core.assess({...example,actionType:'draft'}).approach,/read-only/));
+test('no explicit return on investment promise in brief',()=>{const b=Core.brief(Core.assess(example));assert.match(b,/NOT A PROMISE/);assert.match(b,/no project enquiry was submitted/i)});
+test('input sanitises control characters',()=>assert.equal(Core.clean(' hi\u0000\nthere '),'hi there'));
+test('missing optional info does not invent business results',()=>assert.match(Core.assess({...example,outcome:''}).outcome,/Define a measurable target/));

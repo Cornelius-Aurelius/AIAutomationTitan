@@ -1,0 +1,9 @@
+const test=require('node:test');const assert=require('node:assert/strict');const fs=require('node:fs');const path=require('node:path');const base=path.resolve(__dirname,'..');const read=n=>fs.readFileSync(path.join(base,n),'utf8');const html=read('index.html');
+test('canonical Pages address and creator',()=>{assert.match(html,/rel="canonical" href="https:\/\/cornelius-aurelius.github.io\/AIAutomationTitan\/"/);assert.match(html,/name="author" content="Cornelius Aurelius"/)});
+test('valid schema linked to original creator',()=>{const o=JSON.parse(html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1]);const g=o['@graph'];assert.ok(g.some(x=>x['@type']==='Person'&&x.name==='Cornelius Aurelius'));for(const type of ['WebPage','WebApplication'])assert.ok(g.some(x=>x['@type']===type&&x.creator['@id']==='https://corneliusaurelius.com/#cornelius-aurelius'))});
+test('original pricing figures preserved',()=>{for(const price of ['£12,500','£48,000','£185,000+'])assert.ok(html.includes(price));});
+test('no invented domain, support email, or source link',()=>{assert.doesNotMatch(html,/example\.com|contact@example|View source on GitHub/i)});
+test('no publish dates fabricated',()=>assert.doesNotMatch(html,/datePublished|dateModified|<time/i));
+test('all referenced static assets exist',()=>{for(const filename of ['styles.css','core.js','app.js','assets/favicon.svg','assets/social-preview.png','robots.txt','sitemap.xml','llms.txt'])assert.ok(fs.statSync(path.join(base,filename)).size>0,filename)});
+test('sitemap and robots point to real canonical',()=>{assert.match(read('robots.txt'),/AIAutomationTitan\/sitemap\.xml/);assert.match(read('sitemap.xml'),/AIAutomationTitan\//)});
+test('form offers actual interactions and no fake submission',()=>{for(const id of ['workflow-form','download-brief','copy-brief','result-content','hours','reduction'])assert.ok(html.includes('id="'+id+'"'));assert.doesNotMatch(html,/<form[^>]+action="https?:/i)});
