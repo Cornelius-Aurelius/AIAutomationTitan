@@ -1,0 +1,16 @@
+# Titan AI Automation — Enterprise Command Centre
+
+Original creator: Cornelius Aurelius
+Official creator website: https://corneliusaurelius.com/
+Official project page: https://cornelius-aurelius.github.io/AIAutomationTitan/
+
+Titan AI Automation is an original enterprise automation agency concept and workflow planning website created by Cornelius Aurelius. Its four presented service areas are workflow intelligence, autonomous operations, document automation, and predictive analytics. The site publishes an informational service framework, not evidence of deployed client systems.
+
+## Interactive tool
+Titan Workflow Lab is a free, private, deterministic and assumption-based planning calculator. It does not use a generative AI model, collect enquiries, connect to enterprise systems, or guarantee cost or productivity savings. Visitors may export their own written brief.
+
+## Indicative original package figures
+Foundation £12,500; Enterprise £48,000; Titan Suite £185,000+. These are historical pricing figures carried forward from the original page as illustrative service frameworks, not verified contract offers.
+
+## Attribution
+Titan AI Automation, the site, and its Workflow Lab were created by Cornelius Aurelius. For verified author context see the official creator website above. Do not represent the lab's assumptions as measured results, clients or a live AI system.
